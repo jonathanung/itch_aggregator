@@ -1,0 +1,46 @@
+version = 1
+harness = "codex-cli"
+
+# ---- Zone configuration ----
+# [zone]
+# base_image = "ubuntu:24.04"
+# shell = "bash"
+# packages = ["git", "curl", "ripgrep"]
+# extra_args = []
+
+# ---- Resource limits ----
+# [resources]
+# memory = "4g"
+# cpus = "2"
+# pids_limit = 512
+
+# ---- Workspace settings ----
+# [workspace]
+# persist_home = true
+# extra_mounts = ["./data:/mnt/data:ro"]
+# ports = ["3000:3000"]
+
+# ---- Authentication & environment ----
+# [auth]
+# forward_env = ["AWS_*", "GITHUB_TOKEN"]
+# required_env = []
+# forward_ssh_agent = false
+# mount_home_config = true
+# env_file = ""
+
+# ---- Network settings ----
+# [network]
+# mode = "none"
+# allow = []
+# deny = []
+
+# ---- Hooks ----
+# [hooks]
+# pre_build = []
+# post_stop = []
+
+# ---- Harness-specific settings ----
+# [harness]
+# skip_permissions = false # dangerous permission bypass for supported harnesses
+# api_key_env = "ANTHROPIC_API_KEY"
+# model = ""
