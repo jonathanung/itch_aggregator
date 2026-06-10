@@ -5,8 +5,11 @@ harness = "claude-code"
 [zone]
 # CUDA 12.6 devel image: nvcc 12.6 pairs with Ubuntu 24.04's GCC 13 and supports sm_89 (RTX 4080).
 base_image = "nvidia/cuda:12.6.3-devel-ubuntu24.04"
-packages = ["git", "curl", "ripgrep", "build-essential", "cmake", "ninja-build",
-            "zlib1g-dev", "python3", "gdb", "pkg-config"]
+
+# ---- Packages ----
+[packages]
+apt = ["git", "curl", "ripgrep", "build-essential", "cmake", "ninja-build",
+       "zlib1g-dev", "python3", "gdb", "pkg-config"]
 
 # ---- Resource limits ----
 [resources]
