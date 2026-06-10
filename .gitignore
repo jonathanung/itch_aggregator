@@ -3,3 +3,5 @@ build/
 data/
 *.nsys-rep
 *.ncu-rep
+agents/
+.claude/
