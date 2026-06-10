@@ -1,2 +1,5 @@
-
 .zone/
+build/
+data/
+*.nsys-rep
+*.ncu-rep

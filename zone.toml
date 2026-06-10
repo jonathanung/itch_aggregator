@@ -1,15 +1,16 @@
 version = 1
-harness = "codex-cli"
+harness = "claude-code"
 
 # ---- Zone configuration ----
-# [zone]
-# base_image = "ubuntu:24.04"
-# shell = "bash"
-# packages = ["git", "curl", "ripgrep"]
-# extra_args = []
+[zone]
+# CUDA 12.6 devel image: nvcc 12.6 pairs with Ubuntu 24.04's GCC 13 and supports sm_89 (RTX 4080).
+base_image = "nvidia/cuda:12.6.3-devel-ubuntu24.04"
+packages = ["git", "curl", "ripgrep", "build-essential", "cmake", "ninja-build",
+            "zlib1g-dev", "python3", "gdb", "pkg-config"]
 
 # ---- Resource limits ----
-# [resources]
+[resources]
+gpus = "all"   # GPU passthrough: "all", a count like "2", or "device=0,1". Needs NVIDIA Container Toolkit.
 # memory = "4g"
 # cpus = "2"
 # pids_limit = 512
@@ -29,6 +30,8 @@ harness = "codex-cli"
 # env_file = ""
 
 # ---- Network settings ----
+# Default (permissive) network is required: emi.nasdaq.com for ITCH day files,
+# github for vendored deps, ubuntu mirrors for apt during image build.
 # [network]
 # mode = "none"
 # allow = []
