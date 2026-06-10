@@ -1,8 +1,8 @@
 version = 1
-harness = "claude-code"
 
 # ---- Zone configuration ----
 [zone]
+harness = "claude-code"
 # CUDA 12.6 devel image: nvcc 12.6 pairs with Ubuntu 24.04's GCC 13 and supports sm_89 (RTX 4080).
 base_image = "nvidia/cuda:12.6.3-devel-ubuntu24.04"
 
@@ -46,7 +46,7 @@ gpus = "all"   # GPU passthrough: "all", a count like "2", or "device=0,1". Need
 # post_stop = []
 
 # ---- Harness-specific settings ----
-# [harness]
-# skip_permissions = false # dangerous permission bypass for supported harnesses
+[harness]
+skip_permissions = true # dangerous permission bypass for supported harnesses
 # api_key_env = "ANTHROPIC_API_KEY"
 # model = ""

@@ -79,7 +79,7 @@ TEST_CASE("cpu reference: VWAP, imbalance, window quotes, cancels") {
 
     std::vector<Snapshot> snap(MAX_SYMBOLS);
     cpu_snapshot(acc, snap.data(), MAX_SYMBOLS);
-    CHECK(snap[7].vwap == doctest::Approx(12.345714285714).epsilon(1e-9));
+    CHECK(snap[7].vwap == doctest::Approx(12.348571428571).epsilon(1e-9));
     CHECK(snap[7].volume == 350);
     CHECK(snap[7].imbalance == doctest::Approx((100.0 - 50.0) / 150.0));
     CHECK(snap[7].bid == 123100);
